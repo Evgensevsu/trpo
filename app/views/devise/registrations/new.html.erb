@@ -13,7 +13,10 @@
       <%= f.label :last_name %><br />
       <%= f.text_field :last_name, autofocus: true, autocomplete: "Фамилия", class: "input-field" %>
     </div>
-
+    <div class="field">
+      <%= f.label :role %><br />
+      <%= f.collection_select :role_ids, Role.where(name: ['landlord', 'tenant']), :id, :name %>
+    </div>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field" %>
