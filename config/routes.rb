@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'cart', to: 'cart#show'
+  post 'cart/add'
+  post 'cart/remove'
   resources :apartments
   devise_for :users, controllers: {
     registrations: 'users/registrations'
