@@ -1,13 +1,26 @@
+<<<<<<< HEAD
 <h1>Список объектов</h1>
+=======
+<div class="container1">
+<h1>Список апартаментов</h1>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
 
 <table>
   <thead>
     <tr>
+<<<<<<< HEAD
       <th>Название</th>
       <th>Описание</th>
       <th>Цена</th>
       <th>Местоположение</th>
       <th colspan="5"></th>
+=======
+      <th>Заголовок</th>
+      <th>Описание</th>
+      <th>Цена</th>
+      <th>Координаты</th>
+      <th colspan="4"></th>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
     </tr>
   </thead>
   
@@ -18,6 +31,7 @@
         <td><%= apartment.description %></td>
         <td><%= apartment.price %></td>
         <td><%= apartment.location %></td>
+<<<<<<< HEAD
         <td><%= link_to 'Просмотреть', apartment %></td>
         <td><%= link_to 'Редактировать', edit_apartment_path(apartment) %></td>
         <td><%= link_to 'Удалить', apartment, 'data-turbo-method': :delete, data: { confirm: 'Вы уверены?' } %></td>
@@ -27,8 +41,22 @@
       <%= f.submit "Add To Cart" %></td>
     <% end %> 
       </tr>
+=======
+      </tr>
+        <td><%= link_to 'Посмотреть', apartment %></td>
+        <td><%= link_to 'Отредактировать', edit_apartment_path(apartment) %></td>
+        <td><%= link_to 'Удалить', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
     <% end %>
   </tbody>
 </table>
 
+<<<<<<< HEAD
 <p><%= link_to 'Добавить объект', new_apartment_path %></p>
+=======
+</br>
+<p><%= link_to 'Новый Апартамент', new_apartment_path,style: "text-align: center; display: block; margin-top: 10px; color: #333;" %></p>
+<%= link_to "Выход", destroy_user_session_path, 'data-turbo-method': :delete, class: "sign-out", style: "text-align: center; display: block; margin-top: 10px; color: red;" %>
+  <%= link_to "Назад", :back, style: "text-align: center; display: block; margin-top: 10px; color: #333;" %> 
+</div>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8

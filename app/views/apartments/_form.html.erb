@@ -1,7 +1,11 @@
 <%= form_with(model: apartment, url: apartment.persisted? ? apartment_path(apartment) : apartments_path, local: true) do |form| %>
   <% if apartment.errors.any? %>
     <div id="error_explanation">
+<<<<<<< HEAD
       <h2><%= pluralize(apartment.errors.count, 'error') %> запретила сохранение этого объекта:</h2>
+=======
+      <h2><%= pluralize(apartment.errors.count, 'error') %> запрещено добавить этот апартамент</h2>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
 
       <ul>
         <% apartment.errors.full_messages.each do |message| %>

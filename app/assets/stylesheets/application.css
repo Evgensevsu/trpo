@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* ../sessions/new.html.erb*/
 .login-form-container {
     display: flex;
@@ -81,14 +81,13 @@
   .login-form .links-container {
 =======
 .devise-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Дополнительный отступ сверху */
-  }
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Дополнительный отступ сверху */
+}
   body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -98,10 +97,11 @@
     justify-content: center;
     height: 100vh;
   }
-  
+  .container1 {
+    max-width: 800px; /* или любая другая подходящая ширина */
+  }
   .container {
     max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

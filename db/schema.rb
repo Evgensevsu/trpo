@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +66,33 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_191011) do
   enable_extension "plpgsql"
 
 >>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
+=======
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_170558) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "apartments", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "price"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_apartments_on_user_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
+  end
+
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -80,6 +108,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_191011) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
   create_table "users_roles", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
@@ -89,8 +120,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_191011) do
   end
 
   add_foreign_key "apartments", "users"
+<<<<<<< HEAD
   add_foreign_key "orderables", "apartments"
   add_foreign_key "orderables", "carts"
 =======
 >>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
+=======
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
 end

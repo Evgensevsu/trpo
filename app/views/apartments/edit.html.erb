@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 <h1>Редактирование объекта</h1>
 
 <%= render 'form', apartment: @apartment %>
 
 <p><%= link_to 'Просмотреть', @apartment %></p>
 <p><%= link_to 'Назад', apartments_path %></p>
+=======
+<div class="container1">
+<h1>Редактирование апартамента</h1>
+
+<%= render 'form', apartment: @apartment %>
+
+<p><%= link_to 'Просмотр', @apartment %></p>
+<p><%= link_to 'Назад', apartments_path %></p>
+<%= link_to "Выход", destroy_user_session_path, 'data-turbo-method': :delete, class: "sign-out", style: "text-align: center; display: block; margin-top: 10px; color: red;" %>
+</div>
+>>>>>>> 12323b7acd82f05a5c5836bdeef32b2cffd406c8
