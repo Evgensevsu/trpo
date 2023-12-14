@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
     before_action :set_render_cart
     before_action :initialize_cart
 
@@ -15,3 +16,6 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+=======
+end
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd

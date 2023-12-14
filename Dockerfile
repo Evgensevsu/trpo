@@ -1,7 +1,11 @@
 # syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
+<<<<<<< HEAD
 ARG RUBY_VERSION=3.2.2
+=======
+ARG RUBY_VERSION=3.2.1
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
 # Rails app lives here
@@ -24,11 +28,22 @@ RUN apt-get update -qq && \
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
+<<<<<<< HEAD
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+=======
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    bundle exec bootsnap precompile --gemfile
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 
 # Copy application code
 COPY . .
 
+<<<<<<< HEAD
+=======
+# Precompile bootsnap code for faster boot times
+RUN bundle exec bootsnap precompile app/ lib/
+
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 # Adjust binfiles to be executable on Linux
 RUN chmod +x bin/* && \
     sed -i "s/\r$//g" bin/* && \

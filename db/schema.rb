@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +59,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
+=======
+ActiveRecord::Schema[7.1].define(version: 2023_11_16_191011) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -72,6 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "users_roles", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
@@ -83,4 +91,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_14_132742) do
   add_foreign_key "apartments", "users"
   add_foreign_key "orderables", "apartments"
   add_foreign_key "orderables", "carts"
+=======
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 end

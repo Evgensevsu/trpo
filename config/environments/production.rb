@@ -69,7 +69,11 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque
+<<<<<<< HEAD
   # config.active_job.queue_name_prefix = "home_finder_production"
+=======
+  # config.active_job.queue_name_prefix = "pr1_1_production"
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 
   config.action_mailer.perform_caching = false
 
@@ -94,7 +98,10 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+<<<<<<< HEAD
 
   config.action_mailer.default_url_options = 
   { :host => 'localhost:3000' }  #if it is local then 'localhost:3000'
+=======
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
 end

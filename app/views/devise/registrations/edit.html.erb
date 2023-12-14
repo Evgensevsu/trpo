@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="edit-form-container">
   <div class="edit-form">
     <h2>Редактирование <%= resource_name.to_s.humanize %></h2>
@@ -67,3 +68,60 @@
   </div>
 </div>
 
+=======
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+  <h2 style="text-align: center; color: #333; margin-bottom: 20px;">Редактировать <%= resource_name.to_s.humanize %></h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "Имя пользователя", class: "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "Фамилия", class: "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>В настоящее время ожидает подтверждения для: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password %> <i>(оставьте поле пустым, если вы не хотите его изменять)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "input-field" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %>минимум символов</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password %> <i>(нужен ваш текущий пароль для подтверждения ваших изменений)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "input-field" %>
+    </div>
+
+    <div class="actions" style="text-align: center; margin-top: 20px;">
+      <%= f.submit "Обновить", class: "btn-submit" %>
+    </div>
+  <% end %>
+
+  <h3>Удалить мою учетную запись</h3>
+  <div style="text-align: center; margin-top: 10px;"> <%= button_to "Удалить мою запись", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn-cancel" %></div>
+
+  <%= link_to "Выход", destroy_user_session_path, 'data-turbo-method': :delete, class: "sign-out", style: "text-align: center; display: block; margin-top: 10px; color: red;" %>
+  <%= link_to "Назад", :back, style: "text-align: center; display: block; margin-top: 10px; color: #333;" %> 
+</div>
+>>>>>>> b57ee9a6c8b194fc038e02c3385308826f7330fd
